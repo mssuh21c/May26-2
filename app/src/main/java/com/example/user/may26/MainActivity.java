@@ -1,5 +1,6 @@
 package com.example.user.may26;
 
+import android.net.sip.SipAudioCall;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -19,16 +20,17 @@ public class MainActivity extends AppCompatActivity {
 
 
         mbtn1 = (Button)findViewById(R.id.button1);
-        mbtn1.setOnClickListener ( new Button.OnClickListener() {
-            public void onClick ( View v ) {
-                mbtn2 = (Button)findViewById(R.id.button2);
-                mbtn2.setText ( "bye");
-            }
+        mbtn1.setOnClickListener ( new InnClass() {
+
         } );
+    }
 
+    private class InnClass implements View.OnClickListener{
 
-
-
+        public void onClick ( View v ) {
+            mbtn2 = (Button)findViewById(R.id.button2);
+            mbtn2.setText ( "bye");
+        }
     }
 
     @Override
