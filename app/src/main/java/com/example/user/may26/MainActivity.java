@@ -12,6 +12,25 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
+    private Button mbtn1;
+    private Button mbtn2;
+
+    private MainActivity() {
+
+
+        mbtn1 = (Button)findViewById(R.id.button1);
+        mbtn1.setOnClickListener ( new Button.OnClickListener() {
+            public void onClick ( View v ) {
+                mbtn2 = (Button)findViewById(R.id.button2);
+                mbtn2.setText ( "bye");
+            }
+        } );
+
+
+
+
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,18 +47,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        (Button) btn1 = (Button)findViewById(R.id.button1);
-
-
-        btn1.setOnClickListener ( new Button.OnClickListener() {
-            public void OnClick ( View v ) {
-                (Button) btn2 = (Button)findViewById(R.id.button2);
-                btn2.setText ( "bye");
-
-            }
-        }
-
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
